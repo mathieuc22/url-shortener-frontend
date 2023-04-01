@@ -4,6 +4,9 @@
     <section class="shortener-section">
       <ShortenerForm />
     </section>
+    <section class="advantages-section">
+      <advantages-section></advantages-section>
+    </section>
     <section class="api-section">
       <ApiSection />
     </section>
@@ -13,6 +16,7 @@
 <script setup>
 import HeroSection from "@/components/HeroSection.vue";
 import ShortenerForm from "@/components/ShortenerForm.vue";
+import AdvantagesSection from "@/components/AdvantagesSection.vue";
 import ApiSection from "@/components/ApiSection.vue";
 </script>
 
@@ -24,7 +28,8 @@ import ApiSection from "@/components/ApiSection.vue";
 }
 
 .shortener-section,
-.api-section {
+.api-section,
+.advantages-section {
   margin: 1rem 1.5rem;
   padding: 1.5rem;
   background-color: var(--color-bg-secondary);

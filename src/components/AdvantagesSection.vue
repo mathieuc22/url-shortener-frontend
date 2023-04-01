@@ -1,99 +1,83 @@
 <template>
-  <section class="advantages">
-    <div class="container">
-      <h2 class="section-title">Avantages de l'utilisation de LienCourt.fr</h2>
-      <div class="advantages-grid">
-        <div class="advantages-item">
-          <font-awesome-icon
-            :icon="['fas', 'rocket']"
-            class="advantages-icon"
-          />
-          <h3 class="advantages-subtitle">Simplicité d'utilisation</h3>
-          <p class="advantages-description">
-            Il est extrêmement facile d'utiliser LienCourt.fr pour raccourcir
-            vos liens. Il suffit de coller votre lien original, de cliquer sur
-            le bouton de raccourcissement, et vous obtenez un lien court en
-            quelques secondes.
-          </p>
-        </div>
-        <div class="advantages-item">
-          <font-awesome-icon :icon="['fas', 'link']" class="advantages-icon" />
-          <h3 class="advantages-subtitle">
-            Personnalisation des liens raccourcis
-          </h3>
-          <p class="advantages-description">
-            Avec LienCourt.fr, vous pouvez personnaliser les liens raccourcis
-            pour qu'ils correspondent à votre marque ou à votre entreprise. Vous
-            pouvez choisir votre propre texte de lien court et personnaliser le
-            domaine de votre lien raccourci.
-          </p>
-        </div>
-        <div class="advantages-item">
-          <font-awesome-icon
-            :icon="['fas', 'chart-bar']"
-            class="advantages-icon"
-          />
-          <h3 class="advantages-subtitle">Statistiques de clics</h3>
-          <p class="advantages-description">
-            LienCourt.fr vous fournit des statistiques détaillées sur les clics
-            de vos liens raccourcis. Vous pouvez voir le nombre de clics, les
-            référents, les emplacements géographiques et bien plus encore.
-          </p>
-        </div>
+  <div class="advantages">
+    <h2 class="advantages__title">Pourquoi choisir LienCourt.fr ?</h2>
+    <div class="advantages__cards">
+      <div class="advantages-card">
+        <font-awesome-icon icon="user-clock" class="advantages-card__icon" />
+        <h3 class="advantages-card__title">Simplicité d'utilisation</h3>
+        <p class="advantages-card__description">
+          Créez des liens courts en quelques secondes, sans aucune configuration
+          complexe.
+        </p>
+      </div>
+      <div class="advantages-card">
+        <font-awesome-icon icon="edit" class="advantages-card__icon" />
+        <h3 class="advantages-card__title">Personnalisation des liens</h3>
+        <p class="advantages-card__description">
+          Personnalisez vos liens courts pour les rendre plus attrayants et
+          faciles à retenir.
+        </p>
+      </div>
+      <div class="advantages-card">
+        <font-awesome-icon icon="chart-bar" class="advantages-card__icon" />
+        <h3 class="advantages-card__title">Statistiques de clics</h3>
+        <p class="advantages-card__description">
+          Suivez les performances de vos liens courts et analysez les
+          statistiques de clics pour optimiser vos campagnes.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <style scoped>
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 60px;
-}
-
 .advantages {
-  background-color: var(--color-light);
-  padding: 60px 0;
-}
-
-.advantages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 60px;
-}
-
-.advantages-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
 }
 
-.advantages-icon {
-  font-size: 4rem;
-  color: var(--color-primary);
-  margin-bottom: 20px;
-}
-
-.advantages-subtitle {
+.advantages__title {
   font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
-.advantages-description {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
+.advantages__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.advantages-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-light);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 250px;
+}
+
+.advantages-card__icon {
+  font-size: 2rem;
+}
+
+.advantages-card__title {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .advantages__cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
 }
 </style>

@@ -20,6 +20,9 @@
 [data-theme="dark"] {
   --color-bg: #343a40;
   --color-text: #f8f9fa;
+  --color-secondary: #f8f9fa;
+  --color-light: #212529;
+  --color-dark: #f8f9fa;
 }
 
 /* Mobile first */

@@ -62,10 +62,23 @@ async function handleSubmit() {
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-light);
+  margin-bottom: 0.5rem;
 }
 
 .input {
@@ -79,24 +92,24 @@ async function handleSubmit() {
 }
 
 .input:focus {
-  border-color: var(--color-primary-dark);
+  border-color: var(--color-light);
 }
 
 .submit-button {
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  background-color: var(--color-primary-dark);
-  border: none;
+  background-color: var(--color-light);
+  border: 1px solid var(--color-secondary);
   border-radius: 0.25rem;
-  color: white;
+  color: var(--color-dark);
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
 }
 
 .submit-button:hover,
 .submit-button:focus {
-  background-color: var(--color-primary-darker);
+  background-color: var(--color-light);
 }
 
 .generated-links {
@@ -109,8 +122,10 @@ async function handleSubmit() {
 @media screen and (min-width: 768px) {
   .shortener-form {
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     gap: 1rem;
+    min-width: 600px;
+    justify-content: space-between;
   }
 
   .input {

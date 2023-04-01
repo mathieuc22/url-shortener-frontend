@@ -55,11 +55,11 @@ const router = useRouter();
 }
 
 .api-section__cta:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-secondary);
 }
 
 .api-section__code-example {
-  background-color: #f8f9fa;
+  background-color: var(--color-light);
   padding: 1rem;
   border-radius: 4px;
   font-size: 0.9rem;

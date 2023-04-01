@@ -11,7 +11,7 @@
         required
       />
     </div>
-    <button class="submit-button" type="submit">Raccourcir</button>
+    <button class="button" type="submit">Raccourcir</button>
   </form>
   <div v-if="recentShortenedUrls.length" class="recent-urls">
     <h3>Derniers liens raccourcis :</h3>
@@ -85,31 +85,16 @@ async function handleSubmit() {
   flex-grow: 1;
   padding: 0.5rem;
   font-size: 1rem;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-light);
   border-radius: 0.25rem;
   outline: none;
   transition: border-color 0.15s ease-in-out;
+  background-color: white;
+  cursor: text;
 }
 
 .input:focus {
-  border-color: var(--color-light);
-}
-
-.submit-button {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  background-color: var(--color-light);
-  border: 1px solid var(--color-secondary);
-  border-radius: 0.25rem;
-  color: var(--color-dark);
-  cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
-}
-
-.submit-button:hover,
-.submit-button:focus {
-  background-color: var(--color-light);
+  border-color: var(--color-secondary);
 }
 
 .generated-links {

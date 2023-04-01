@@ -9,7 +9,6 @@
           <li><router-link to="/about">À propos</router-link></li>
         </ul>
       </nav>
-
       <button class="theme-toggle" @click="toggleTheme">
         <font-awesome-icon :icon="themeIcon" />
       </button>
@@ -35,16 +34,23 @@ const toggleTheme = () => {
   padding: 1rem 0;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex: 1;
 }
 
 .nav__logo {
   font-family: var(--font-family-heading);
   font-size: 1.5rem;
-  color: var(--color-light);
 }
 
 .nav__links {
@@ -59,11 +65,15 @@ const toggleTheme = () => {
 }
 
 .nav__links a {
-  color: var(--color-light);
   transition: color var(--transition-duration);
 }
 
+.theme-toggle {
+  width: 20px;
+}
+.theme-toggle:hover,
 .nav__links a:hover {
+  background-color: var(--color-primary);
   color: var(--color-info);
 }
 </style>

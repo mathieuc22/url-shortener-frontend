@@ -6,7 +6,7 @@
         <p class="hero__subtitle">
           Réduisez vos liens facilement et rapidement avec notre service.
         </p>
-        <router-link to="/api-docs" class="hero__cta"
+        <router-link to="/api-docs" class="button"
           >Découvrez notre API</router-link
         >
       </div>
@@ -46,21 +46,6 @@ const name = "HeroSection";
   font-size: 1rem;
   color: var(--color-light);
   margin-bottom: 2rem;
-}
-
-.hero__cta {
-  font-family: var(--font-family-heading);
-  font-size: 1rem;
-  background-color: var(--color-info);
-  color: var(--color-light);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  transition: background-color var(--transition-duration);
-}
-
-.hero__cta:hover {
-  background-color: var(--color-info-darker);
 }
 
 .hero__image {

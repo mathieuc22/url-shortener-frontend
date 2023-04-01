@@ -6,7 +6,7 @@
       vos applications. Consultez la documentation complète pour plus
       d'informations.
     </p>
-    <router-link to="/api-docs" class="api-section__cta"
+    <router-link to="/api-docs" class="button"
       >Voir la documentation API</router-link
     >
     <pre class="api-section__code-example">
@@ -24,7 +24,7 @@
   </section>
 </template>
   
-  <script setup>
+<script setup>
 import { useRouter } from "vue-router";
 const router = useRouter();
 </script>
@@ -42,20 +42,6 @@ const router = useRouter();
 
 .api-section__description {
   margin-bottom: 1rem;
-}
-
-.api-section__cta {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.api-section__cta:hover {
-  background-color: var(--color-secondary);
 }
 
 .api-section__code-example {

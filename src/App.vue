@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <h1>URL Shortener</h1>
     <form @submit.prevent="shortenUrl">
       <input v-model="urlToShorten" placeholder="Enter URL to shorten" />
@@ -24,32 +25,35 @@
 
 <script>
 import { API_BASE_URL, createShortUrl } from "./api";
+import Header from "./components/Header.vue";
 
 export default {
-  name: "App",
-  data() {
-    return {
-      urlToShorten: "",
-      shortenedUrl: "",
-      recentShortUrls: [],
-    };
-  },
-  methods: {
-    async shortenUrl() {
-      try {
-        const { id } = await createShortUrl(this.urlToShorten);
-        const newShortUrl = `${API_BASE_URL}/${id}`;
-        this.shortenedUrl = newShortUrl;
-        this.recentShortUrls.unshift(newShortUrl);
-        if (this.recentShortUrls.length > 4) {
-          this.recentShortUrls.pop();
-        }
-      } catch (error) {
-        console.error("Error shortening URL:", error.message);
-        alert("An error occurred. Please try again.");
-      }
+    name: "App",
+    data() {
+        return {
+            urlToShorten: "",
+            shortenedUrl: "",
+            recentShortUrls: [],
+        };
     },
-  },
+    methods: {
+        async shortenUrl() {
+            try {
+                const { id } = await createShortUrl(this.urlToShorten);
+                const newShortUrl = `${API_BASE_URL}/${id}`;
+                this.shortenedUrl = newShortUrl;
+                this.recentShortUrls.unshift(newShortUrl);
+                if (this.recentShortUrls.length > 4) {
+                    this.recentShortUrls.pop();
+                }
+            }
+            catch (error) {
+                console.error("Error shortening URL:", error.message);
+                alert("An error occurred. Please try again.");
+            }
+        },
+    },
+    components: { Header }
 };
 </script>
 

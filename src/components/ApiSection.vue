@@ -1,15 +1,13 @@
 <template>
-  <section class="api-section">
-    <h2 class="api-section__title">API REST pour les développeurs</h2>
-    <p class="api-section__description">
-      Utilisez notre API REST pour intégrer facilement la réduction d'URL dans
-      vos applications. Consultez la documentation complète pour plus
-      d'informations.
-    </p>
-    <router-link to="/api-docs" class="button"
-      >Voir la documentation API</router-link
-    >
-    <pre class="api-section__code-example">
+  <h2 class="api-section__title">API REST pour les développeurs</h2>
+  <p class="api-section__description">
+    Utilisez notre API REST pour intégrer facilement la réduction d'URL dans vos
+    applications. Consultez la documentation complète pour plus d'informations.
+  </p>
+  <router-link to="/api-docs" class="button"
+    >Voir la documentation API</router-link
+  >
+  <pre class="api-section__code-example">
         <code>
   // Exemple d'intégration en JavaScript
   async function shortenUrl(url) {
@@ -21,7 +19,6 @@
   }
         </code>
       </pre>
-  </section>
 </template>
   
 <script setup>
@@ -29,12 +26,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 </script>
   
-  <style scoped>
-.api-section {
-  padding: 1rem;
-  text-align: center;
-}
-
+<style scoped>
 .api-section__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;

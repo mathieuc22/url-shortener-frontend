@@ -30,14 +30,14 @@ import ApiSection from "@/components/ApiSection.vue";
 .shortener-section,
 .api-section,
 .advantages-section {
-  margin: 1rem 1.5rem;
   padding: 1.5rem;
   background-color: var(--color-bg-secondary);
 }
 
 @media screen and (min-width: 768px) {
   .shortener-section,
-  .api-section {
+  .api-section,
+  .advantages-section {
     margin: 1rem auto;
     max-width: 800px;
   }

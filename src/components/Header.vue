@@ -3,10 +3,22 @@
     <div class="container">
       <nav class="nav">
         <router-link to="/" class="nav__logo">LienCourt.fr</router-link>
-        <ul class="nav__links">
-          <li><router-link to="/">Accueil</router-link></li>
-          <li><router-link to="/api-docs">Documentation API</router-link></li>
-          <li><router-link to="/about">À propos</router-link></li>
+        <button class="hamburger" @click="toggleMenu" v-if="!menuOpen">
+          <font-awesome-icon icon="bars" />
+        </button>
+        <button class="hamburger close" @click="toggleMenu" v-if="menuOpen">
+          <font-awesome-icon icon="times" />
+        </button>
+        <ul :class="{ nav__links: true, 'nav__links--visible': menuOpen }">
+          <li><router-link to="/" @click="toggleMenu">Accueil</router-link></li>
+          <li>
+            <router-link to="/api-docs" @click="toggleMenu"
+              >Documentation API</router-link
+            >
+          </li>
+          <li>
+            <router-link to="/about" @click="toggleMenu">À propos</router-link>
+          </li>
         </ul>
       </nav>
       <button class="theme-toggle" @click="toggleTheme">
@@ -15,16 +27,21 @@
     </div>
   </header>
 </template>
-  
+
 <script setup>
 import { ref } from "vue";
 import themeStore from "@/themeStore";
 
 const themeIcon = ref("sun");
+const menuOpen = ref(false);
 
 const toggleTheme = () => {
   themeStore.toggleTheme();
   themeIcon.value = themeStore.isDark ? "moon" : "sun";
+};
+
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
 };
 </script>
 
@@ -53,6 +70,11 @@ const toggleTheme = () => {
   font-size: 1.5rem;
 }
 
+.hamburger {
+  display: none;
+  z-index: 10;
+}
+
 .nav__links {
   display: flex;
   list-style: none;
@@ -76,5 +98,44 @@ const toggleTheme = () => {
   background-color: var(--color-primary);
   color: var(--color-info);
 }
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    z-index: 9;
+  }
+
+  .nav__links--visible {
+    display: flex;
+  }
+
+  .nav__links li {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+  }
+}
 </style>
-  

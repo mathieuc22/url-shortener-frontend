@@ -49,14 +49,29 @@ const name = ref("");
 const email = ref("");
 const message = ref("");
 
-const handleSubmit = async () => {
-  try {
-    // Ici, vous pouvez effectuer des vérifications ou des traitements supplémentaires avant d'envoyer le formulaire
+const handleSubmit = async (event) => {
+  event.preventDefault(); // Empêche la soumission du formulaire par défaut
 
-    // Simuler un envoi de formulaire réussi
-    router.push("/contact/success");
+  const formData = new FormData();
+  formData.append("name", name.value);
+  formData.append("email", email.value);
+  formData.append("message", message.value);
+
+  try {
+    const response = await fetch("/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+      body: new URLSearchParams(formData),
+    });
+
+    if (response.ok) {
+      router.push("/contact/success");
+    } else {
+      router.push("/contact/error");
+    }
   } catch (error) {
-    // En cas d'erreur lors de l'envoi du formulaire
     router.push("/contact/error");
   }
 };

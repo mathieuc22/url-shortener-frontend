@@ -51,6 +51,7 @@ const { handleSubmit } = useShortenedUrls(url);
   outline: none;
   transition: border-color 0.15s ease-in-out;
   background-color: white;
+  color: var(--color-dark);
   cursor: text;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <h2 class="advantages__title">Pourquoi choisir LienCourt.fr ?</h2>
+  <h2 class="homepage-section__title">Pourquoi choisir LienCourt.fr ?</h2>
   <div class="advantages__cards">
     <div class="advantages-card">
       <font-awesome-icon icon="user-clock" class="advantages-card__icon" />
@@ -29,11 +29,6 @@
 </template>
 
 <style scoped>
-.advantages__title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 .advantages__cards {
   display: flex;
   flex-direction: column;

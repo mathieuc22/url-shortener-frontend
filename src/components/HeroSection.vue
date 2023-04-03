@@ -25,13 +25,13 @@ import ShortenerForm from "@/components/ShortenerForm.vue";
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 40vh;
+  min-height: 30vh;
   padding: 2rem;
   position: relative;
 }
 
 .hero__overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   right: 0;
@@ -62,9 +62,6 @@ import ShortenerForm from "@/components/ShortenerForm.vue";
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
-  .hero {
-    min-height: 60vh;
-  }
 
   .hero__title {
     font-size: 2.5rem;

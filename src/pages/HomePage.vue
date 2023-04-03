@@ -1,13 +1,11 @@
 <template>
   <div class="home-page">
     <HeroSection />
-    <section class="shortener-section">
-      <LastResults />
-    </section>
-    <section class="advantages-section">
+    <LastResults />
+    <section class="homepage-section">
       <advantages-section></advantages-section>
     </section>
-    <section class="api-section">
+    <section class="homepage-section">
       <ApiSection />
     </section>
   </div>
@@ -20,25 +18,36 @@ import AdvantagesSection from "@/components/AdvantagesSection.vue";
 import ApiSection from "@/components/ApiSection.vue";
 </script>
 
-<style scoped>
+<style>
 .home-page {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.shortener-section,
-.api-section,
-.advantages-section {
+.homepage-section {
   padding: 1.5rem;
   background-color: var(--color-bg-secondary);
+  width: 100%;
+  margin: 1rem auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-section__title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
 
-  .shortener-section,
-  .api-section,
-  .advantages-section {
+  .homepage-section {
     margin: 1rem auto;
     max-width: 800px;
   }

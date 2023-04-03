@@ -1,0 +1,102 @@
+<template>
+  <section class="contact">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <form
+        class="contact-form"
+        action="/merci"
+        method="POST"
+        data-netlify="true"
+        @submit.prevent="handleSubmit"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" v-model="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            v-model="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            v-model="message"
+            required
+          ></textarea>
+        </div>
+        <button class="button" type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+</template>
+  
+  <script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const name = ref("");
+const email = ref("");
+const message = ref("");
+
+const handleSubmit = async () => {
+  try {
+    // Ici, vous pouvez effectuer des vérifications ou des traitements supplémentaires avant d'envoyer le formulaire
+
+    // Simuler un envoi de formulaire réussi
+    router.push("/contact/success");
+  } catch (error) {
+    // En cas d'erreur lors de l'envoi du formulaire
+    router.push("/contact/error");
+  }
+};
+</script>
+  
+  <style scoped>
+.contact {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+</style>
+  

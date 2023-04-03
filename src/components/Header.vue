@@ -10,7 +10,6 @@
           <font-awesome-icon icon="times" />
         </button>
         <ul :class="{ nav__links: true, 'nav__links--visible': menuOpen }">
-          <li><router-link to="/" @click="toggleMenu">Accueil</router-link></li>
           <li>
             <router-link to="/api-docs" @click="toggleMenu"
               >Documentation API</router-link
@@ -18,6 +17,9 @@
           </li>
           <li>
             <router-link to="/about" @click="toggleMenu">À propos</router-link>
+          </li>
+          <li>
+            <router-link to="/contact" @click="toggleMenu">Contact</router-link>
           </li>
         </ul>
       </nav>

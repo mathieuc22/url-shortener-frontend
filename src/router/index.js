@@ -3,6 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../pages/HomePage.vue';
 import AboutPage from '../pages/AboutPage.vue';
 import APIPage from '../pages/APIPage.vue';
+import Contact from '@/pages/Contact.vue';
+import FormSuccess from '@/components/FormSuccess.vue';
+import FormError from '@/components/FormError.vue';
 
 const routes = [
   {
@@ -31,6 +34,21 @@ const routes = [
       title: 'LienCourt.fr - À propos',
       description: 'Apprenez-en plus sur LienCourt.fr, le service de raccourcissement de liens français.',
     },
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+  },
+  {
+    path: '/contact/success',
+    name: 'FormSuccess',
+    component: FormSuccess,
+  },
+  {
+    path: '/contact/error',
+    name: 'FormError',
+    component: FormError,
   },
 ];
 

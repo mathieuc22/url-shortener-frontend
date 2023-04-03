@@ -13,12 +13,11 @@
 
 <script setup>
 import ShortenerForm from "@/components/ShortenerForm.vue";
-// Importer les données si nécessaire
 </script>
 
 <style scoped>
 .hero {
-  background-image: url("../src/assets/hero.png");
+  background-image: url("@/assets/hero.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

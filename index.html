@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LienCourt.fr</title>
-  
-  <!-- Méta-description -->
-  <meta name="description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français.">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LienCourt.fr</title>
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.liencourt.fr/">
-  <meta property="og:title" content="LienCourt.fr">
-  <meta property="og:description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français.">
-  <meta property="og:image" content="https://www.liencourt.fr/path/to/your/og-image.jpg">
+    <!-- Méta-description -->
+    <meta name="description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français." />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.liencourt.fr/">
-  <meta property="twitter:title" content="LienCourt.fr">
-  <meta property="twitter:description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français.">
-  <meta property="twitter:image" content="https://www.liencourt.fr/path/to/your/twitter-image.jpg">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/path/to/your/favicon.png">
-  
-</head>
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.liencourt.fr/" />
+    <meta property="og:title" content="LienCourt.fr" />
+    <meta property="og:description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français." />
+    <meta property="og:image" content="https://www.liencourt.fr/path/to/your/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.liencourt.fr/" />
+    <meta property="twitter:title" content="LienCourt.fr" />
+    <meta property="twitter:description" content="Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français." />
+    <meta property="twitter:image" content="https://www.liencourt.fr/path/to/your/twitter-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/path/to/your/favicon.png" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <form name="contact" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" id="name" name="name" required />
+      <input type="email" id="email" name="email" required />
+      <textarea id="message" name="message" required></textarea>
+    </form>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

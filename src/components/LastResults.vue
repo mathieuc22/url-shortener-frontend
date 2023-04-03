@@ -64,12 +64,15 @@ const copy = (url) => {
   padding: 0;
   width: 100%;
   padding: 1rem;
+  gap: 1rem;
 }
 
 .last-results__list-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  padding: 5px;
   background-color: var(--color-light);
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -81,7 +84,6 @@ const copy = (url) => {
   background-color: var(--color-light);
   font-weight: 500;
   padding: 10px;
-  margin-left: 1rem;
 }
 
 .last-results__shortened-url:before {
@@ -89,7 +91,7 @@ const copy = (url) => {
   display: none;
   position: absolute;
   z-index: 9998;
-  top: -5px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -105,7 +107,7 @@ const copy = (url) => {
   display: none;
   position: absolute;
   z-index: 9999;
-  top: -30px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
@@ -124,6 +126,7 @@ const copy = (url) => {
 }
 
 .last-results__original-url {
+  display: none;
   padding: 10px;
   flex: 1;
 }
@@ -193,6 +196,23 @@ const copy = (url) => {
 
 .copy-icon:focus:after {
   content: 'Copié!';
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .last-results__list-item {
+    flex-direction: row;
+  }
+
+
+  .last-results__shortened-url {
+    margin-left: 1rem;
+  }
+
+  .last-results__original-url {
+    display: block;
+  }
 }
 </style>
   

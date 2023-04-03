@@ -28,8 +28,7 @@
   </head>
   <body>
     <div id="app"></div>
-    <form name="contact" netlify hidden>
-      <input type="hidden" name="form-name" value="contact" />
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" id="name" name="name" required />
       <input type="email" id="email" name="email" required />
       <textarea id="message" name="message" required></textarea>

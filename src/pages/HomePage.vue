@@ -5,9 +5,7 @@
     <section class="homepage-section">
       <advantages-section></advantages-section>
     </section>
-    <section class="homepage-section">
-      <ApiSection />
-    </section>
+    <ApiSection />
   </div>
 </template>
 
@@ -30,7 +28,6 @@ import ApiSection from "@/components/ApiSection.vue";
   background-color: var(--color-bg-secondary);
   width: 100%;
   margin: 1rem auto;
-  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -49,7 +46,7 @@ import ApiSection from "@/components/ApiSection.vue";
 
   .homepage-section {
     margin: 1rem auto;
-    max-width: 800px;
+    max-width: 1024px;
   }
 }
 </style>

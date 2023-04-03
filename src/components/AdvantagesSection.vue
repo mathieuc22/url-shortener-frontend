@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: var(--color-light);

@@ -55,21 +55,13 @@ const handleSubmit = async (event) => {
   formData.append("email", email.value);
   formData.append("message", message.value);
 
-  try {
-    const response = await fetch("/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    });
-
-    if (response.ok) {
-      router.push("/contact/success");
-    } else {
-      router.push("/contact/error");
-    }
-  } catch (error) {
-    router.push("/contact/error");
-  }
+  fetch("/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => router.push("/contact/success"))
+    .catch(() => router.push("/contact/error"));
 };
 </script>
   

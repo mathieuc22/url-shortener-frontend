@@ -5,7 +5,6 @@
       <form
         name="contact"
         class="contact-form"
-        action="/contact/success"
         method="POST"
         data-netlify="true"
         @submit.prevent="handleSubmit"
@@ -58,9 +57,7 @@ const handleSubmit = async (event) => {
   try {
     const response = await fetch("/", {
       method: "POST",
-      headers: {
-        Accept: "application/x-www-form-urlencoded;charset=UTF-8",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData),
     });
 

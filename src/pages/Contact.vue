@@ -3,8 +3,9 @@
     <div class="container">
       <h1>Contactez-nous</h1>
       <form
+        name="contact"
         class="contact-form"
-        action="/merci"
+        action="/contact/success"
         method="POST"
         data-netlify="true"
         @submit.prevent="handleSubmit"

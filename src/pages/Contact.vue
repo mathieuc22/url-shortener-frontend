@@ -50,15 +50,13 @@ const email = ref("");
 const message = ref("");
 
 const handleSubmit = async (event) => {
-  event.preventDefault(); // Empêche la soumission du formulaire par défaut
-
   const formData = new FormData();
   formData.append("name", name.value);
   formData.append("email", email.value);
   formData.append("message", message.value);
 
   try {
-    const response = await fetch("/contact", {
+    const response = await fetch("/", {
       method: "POST",
       headers: {
         Accept: "application/x-www-form-urlencoded;charset=UTF-8",

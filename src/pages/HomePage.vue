@@ -2,7 +2,7 @@
   <div class="home-page">
     <HeroSection />
     <section class="shortener-section">
-      <ShortenerForm />
+      <LastResults />
     </section>
     <section class="advantages-section">
       <advantages-section></advantages-section>
@@ -15,7 +15,7 @@
 
 <script setup>
 import HeroSection from "@/components/HeroSection.vue";
-import ShortenerForm from "@/components/ShortenerForm.vue";
+import LastResults from "@/components/LastResults.vue";
 import AdvantagesSection from "@/components/AdvantagesSection.vue";
 import ApiSection from "@/components/ApiSection.vue";
 </script>
@@ -35,6 +35,7 @@ import ApiSection from "@/components/ApiSection.vue";
 }
 
 @media screen and (min-width: 768px) {
+
   .shortener-section,
   .api-section,
   .advantages-section {

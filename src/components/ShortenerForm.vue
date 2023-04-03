@@ -2,59 +2,20 @@
   <form class="shortener-form" @submit.prevent="handleSubmit">
     <div class="input-group">
       <label for="url" class="input-label">URL à raccourcir</label>
-      <input
-        id="url"
-        v-model="url"
-        type="url"
-        placeholder="https://example.com"
-        class="input"
-        required
-      />
+      <input id="url" v-model="url" type="url" placeholder="https://example.com" class="input" required />
     </div>
     <button class="button" type="submit">Raccourcir</button>
   </form>
-  <div v-if="recentShortenedUrls.length" class="recent-urls">
-    <h3>Derniers liens raccourcis :</h3>
-    <ul>
-      <li v-for="recentUrl in recentShortenedUrls" :key="recentUrl.id">
-        <a
-          :href="recentUrl.shortenedUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{ recentUrl.shortenedUrl }}</a
-        >
-      </li>
-    </ul>
-  </div>
 </template>
   
-  <script setup>
+<script setup>
 import { ref } from "vue";
-
-//   const API_BASE_URL = "https://short.cloudypanda.me";
-const API_BASE_URL = "http://127.0.0.1:8000";
+import { useShortenedUrls } from "@/composables/useShortenedUrls";
 
 const url = ref("");
-const recentShortenedUrls = ref([]);
-
-async function handleSubmit() {
-  const response = await fetch(
-    `${API_BASE_URL}/urls?url=${encodeURIComponent(url.value)}`,
-    {
-      method: "POST",
-    }
-  );
-  if (response.ok) {
-    const data = await response.json();
-    const shortenedUrl = `${API_BASE_URL}/${data.id}`;
-    recentShortenedUrls.value.unshift({ id: data.id, shortenedUrl });
-    recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 4);
-    url.value = "";
-  } else {
-    console.error("Erreur lors de la création de l'URL raccourcie");
-  }
-}
+const { handleSubmit } = useShortenedUrls(url);
 </script>
+
   
 <style scoped>
 .shortener-form {

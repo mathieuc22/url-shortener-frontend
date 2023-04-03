@@ -56,7 +56,7 @@ const handleSubmit = async (event) => {
   formData.append("message", message.value);
 
   try {
-    const response = await fetch("/contact", {
+    const response = await fetch("/", {
       method: "POST",
       headers: {
         Accept: "application/x-www-form-urlencoded;charset=UTF-8",

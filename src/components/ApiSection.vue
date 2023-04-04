@@ -63,15 +63,17 @@ const router = useRouter();
   .api-section {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    max-width: 100%;
   }
 
   .api-section__column {
-    width: 35%;
+    width: 38%;
     text-align: left;
   }
 
   .api-section__code {
-    width: 75%;
+    width: 62%;
   }
 
 }

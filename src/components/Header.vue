@@ -11,15 +11,13 @@
         </button>
         <ul :class="{ nav__links: true, 'nav__links--visible': menuOpen }">
           <li>
-            <router-link to="/api-docs" @click="toggleMenu"
-              >Documentation API</router-link
-            >
+            <router-link to="/api-docs" @click="closeMenu">Documentation API</router-link>
           </li>
           <li>
-            <router-link to="/about" @click="toggleMenu">À propos</router-link>
+            <router-link to="/about" @click="closeMenu">À propos</router-link>
           </li>
           <li>
-            <router-link to="/contact" @click="toggleMenu">Contact</router-link>
+            <router-link to="/contact" @click="closeMenu">Contact</router-link>
           </li>
         </ul>
       </nav>
@@ -45,6 +43,10 @@ const toggleTheme = () => {
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
 };
+
+const closeMenu = () => {
+  menuOpen.value = false;
+};
 </script>
 
 <style scoped>
@@ -61,6 +63,7 @@ const toggleMenu = () => {
 }
 
 .nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -95,10 +98,16 @@ const toggleMenu = () => {
 .theme-toggle {
   width: 20px;
 }
+
 .theme-toggle:hover,
 .nav__links a:hover {
   background-color: var(--color-primary);
   color: var(--color-info);
+}
+
+.close {
+  position: absolute;
+  right: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -117,7 +126,9 @@ const toggleMenu = () => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 2rem;
     padding: 1rem 0;
     z-index: 9;
   }

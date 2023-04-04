@@ -22,7 +22,7 @@
     </div>
   </section>
 </template>
-  
+
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -38,7 +38,7 @@ const handleSubmit = async (event) => {
   formData.append("email", email.value);
   formData.append("message", message.value);
 
-  fetch("/", {
+  fetch("https://liencourt.cloudypanda.me/contact", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
@@ -47,7 +47,7 @@ const handleSubmit = async (event) => {
     .catch(() => router.push("/contact/error"));
 };
 </script>
-  
+
 <style scoped>
 .contact {
   padding: 2rem 0;

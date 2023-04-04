@@ -2,16 +2,16 @@
 
 /* Variables CSS */
 :root {
+  --color-bg: #ffffff;
   --color-primary: #f8f9fa;
   --color-secondary: #6c757d;
+  --color-light: #f8f9fa;
+  --color-dark: #212529;
+  --color-text: #343a40;
   --color-success: #198754;
   --color-danger: #dc3545;
   --color-warning: #ffc107;
   --color-info: #0dcaf0;
-  --color-light: #f8f9fa;
-  --color-dark: #212529;
-  --color-bg: #ffffff;
-  --color-text: #343a40;
   --font-family-base: "Open Sans", sans-serif;
   --font-family-heading: "Poppins", sans-serif;
   --font-size-base: 1rem;
@@ -20,12 +20,12 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: #343a40;
   --color-bg: #343a40;
-  --color-text: #f8f9fa;
+  --color-primary: #212529;
   --color-secondary: #f8f9fa;
   --color-light: #212529;
   --color-dark: #f8f9fa;
+  --color-text: #d3d3d3;
 }
 
 /* Base */
@@ -89,7 +89,7 @@ a:hover {
   text-align: center;
   padding: 0.5rem 1rem;
   background-color: var(--color-light);
-  border: 1px solid var(--color-light);
+  border: 1px solid var(--color-dark);
   border-radius: 0.25rem;
   color: var(--color-dark);
   cursor: pointer;
@@ -98,8 +98,20 @@ a:hover {
 
 .button:hover {
   background-color: var(--color-dark);
-  border: 1px solid var(--color-dark);
+  border: 1px solid var(--color-light);
   color: var(--color-light);
+}
+
+.button--dark {
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
+}
+
+.button--dark:hover {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
 }
 
 .container {

@@ -23,7 +23,7 @@ const { handleSubmit } = useShortenedUrls(url);
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  background-color: var(--color-secondary);
+  background-color: var(--color-dark);
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

@@ -37,7 +37,7 @@ const handleSubmit = async (event) => {
   formData.append("email", email.value);
   formData.append("message", message.value);
 
-  fetch("https://liencourt.cloudypanda.me/contact", {
+  fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),

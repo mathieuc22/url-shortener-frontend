@@ -13,6 +13,32 @@
     <section class="section">
       <h2 class="section__title">Exemples d'utilisation</h2>
       <ApiCode></ApiCode>
+
+      <p>Vous pouvez également fournir le lien en JSON...</p>
+      <pre>
+                <code>
+  // Exemple d'intégration en JavaScript avec un JSON
+  async function shortenUrlWithJson(url) {
+    const response = await fetch('https://short.cloudypanda.me/urls', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ url }),
+    });
+    const data = await response.json();
+    return data;
+  }
+                </code>
+                </pre>
+
+      <p>... ou encore utiliser l'API avec curl :</p>
+      <pre>
+          <code>
+  // Créer un lien raccourci en utilisant curl
+  curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' https://short.cloudypanda.me/urls
+          </code>
+          </pre>
     </section>
 
     <section class="section">

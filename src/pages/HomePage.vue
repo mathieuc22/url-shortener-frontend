@@ -5,6 +5,7 @@
     <section class="homepage-section">
       <advantages-section></advantages-section>
     </section>
+    <ContactCTA />
     <ApiSection />
   </div>
 </template>
@@ -14,6 +15,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import LastResults from "@/components/LastResults.vue";
 import AdvantagesSection from "@/components/AdvantagesSection.vue";
 import ApiSection from "@/components/ApiSection.vue";
+import ContactCTA from "../components/ContactCTA.vue";
 </script>
 
 <style>

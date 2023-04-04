@@ -24,7 +24,6 @@
 </template>
   
 <script setup>
-import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -33,24 +32,21 @@ const name = ref("");
 const email = ref("");
 const message = ref("");
 
-const handleSubmit = async () => {
+const handleSubmit = async (event) => {
   const formData = new FormData();
   formData.append("form-name", "contact");
   formData.append("name", name.value);
   formData.append("email", email.value);
   formData.append("message", message.value);
 
-  const axiosConfig = {
-    header: { "Content-Type": "application/x-www-form-urlencoded" }
-  };
-  axios.post(
-    "/",
-    new URLSearchParams(formData).toString(),
-    axiosConfig
-  )
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
     .then(() => router.push("/contact/success"))
-    .catch(() => router.push("/contact/error"))
-}
+    .catch(() => router.push("/contact/error"));
+};
 </script>
   
 <style scoped>

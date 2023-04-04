@@ -2,14 +2,8 @@
   <section class="contact">
     <div class="container">
       <h1>Contactez-nous</h1>
-      <form
-        name="contact"
-        class="contact-form"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        @submit.prevent="handleSubmit"
-      >
+      <form name="contact" class="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit">
         <input type="hidden" name="form-name" value="contact" />
         <div class="form-group">
           <label for="name">Nom</label>
@@ -17,22 +11,11 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            v-model="email"
-            required
-          />
+          <input type="email" id="email" name="email" v-model="email" required />
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            v-model="message"
-            required
-          ></textarea>
+          <textarea id="message" name="message" v-model="message" required></textarea>
         </div>
         <button class="button" type="submit">Envoyer</button>
       </form>
@@ -40,7 +23,7 @@
   </section>
 </template>
   
-  <script setup>
+<script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -55,7 +38,7 @@ const handleSubmit = async (event) => {
   formData.append("email", email.value);
   formData.append("message", message.value);
 
-  fetch("/contact", {
+  fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
@@ -65,7 +48,7 @@ const handleSubmit = async (event) => {
 };
 </script>
   
-  <style scoped>
+<style scoped>
 .contact {
   padding: 2rem 0;
 }

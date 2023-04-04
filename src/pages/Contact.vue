@@ -33,8 +33,9 @@ const name = ref("");
 const email = ref("");
 const message = ref("");
 
-const handleSubmit = async (event) => {
+const handleSubmit = async () => {
   const formData = new FormData();
+  formData.append("form-name", "contact");
   formData.append("name", name.value);
   formData.append("email", email.value);
   formData.append("message", message.value);

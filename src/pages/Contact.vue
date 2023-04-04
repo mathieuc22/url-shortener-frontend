@@ -2,8 +2,7 @@
   <section class="contact">
     <div class="container">
       <h1>Contactez-nous</h1>
-      <form name="contact" class="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
-        @submit.prevent="handleSubmit">
+      <form name="contact" class="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
         <div class="form-group">
           <label for="name">Nom</label>
@@ -17,7 +16,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" v-model="message" required></textarea>
         </div>
-        <button class="button" type="submit">Envoyer</button>
+        <button class="button" type="submit" @click.prevent="handleSubmit">Envoyer</button>
       </form>
     </div>
   </section>

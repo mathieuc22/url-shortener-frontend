@@ -33,14 +33,6 @@ const name = ref("");
 const email = ref("");
 const message = ref("");
 
-function encode(data) {
-  return Object.keys(data)
-    .map(
-      key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-    )
-    .join("&");
-}
-
 const handleSubmit = async (event) => {
   const formData = new FormData();
   formData.append("name", name.value);
@@ -52,10 +44,7 @@ const handleSubmit = async (event) => {
   };
   axios.post(
     "/",
-    encode({
-      "form-name": "contact",
-      ...formData
-    }),
+    new URLSearchParams(formData).toString(),
     axiosConfig
   )
     .then(() => router.push("/contact/success"))

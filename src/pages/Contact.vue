@@ -1,7 +1,18 @@
 <template>
-  <section class="contact">
-    <div class="container">
-      <h1>Contactez-nous</h1>
+  <div class="page">
+    <section class="section">
+      <h1 class="section__title">Contactez-nous</h1>
+      <p class="section__description">
+        N'hésitez pas à nous contacter si vous avez des questions, des commentaires ou des suggestions concernant notre
+        service de réduction de liens. Nous sommes toujours ravis de recevoir des retours d'expérience de nos
+        utilisateurs, car cela nous aide à améliorer et à développer notre plateforme. Utilisez le formulaire ci-dessous
+        pour nous envoyer un message, et nous vous répondrons dans les plus brefs délais. Votre avis est précieux pour
+        nous, et nous sommes impatients de vous entendre !
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Formulaire de contact</h2>
       <form name="contact" class="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
         @submit.prevent="handleSubmit">
         <input type="hidden" name="form-name" value="contact" />
@@ -19,8 +30,8 @@
         </div>
         <button class="button" type="submit">Envoyer</button>
       </form>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
   
 <script setup>
@@ -50,19 +61,11 @@ const handleSubmit = async (event) => {
 </script>
   
 <style scoped>
-.contact {
-  padding: 2rem 0;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 .form-group {

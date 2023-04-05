@@ -11,6 +11,7 @@
         <a class="last-results__shortened-url" :href="result.shortenedUrl" target="_blank" rel="noopener noreferrer">{{
           result.shortenedUrl }}</a>
         <span class="last-results__original-url">URL d'origine : {{ result.originalUrl }}</span>
+        <span class="last-results__original-url" v-if="result.clicks > 0">Clicks : {{ result.clicks }}</span>
       </li>
     </ul>
   </section>

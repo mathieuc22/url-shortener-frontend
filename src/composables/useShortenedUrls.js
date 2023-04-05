@@ -14,7 +14,11 @@ async function handleSubmit(url) {
   if (response.ok) {
     const data = await response.json();
     const shortenedUrl = `${API_BASE_URL}/${data.id}`;
-    recentShortenedUrls.value.unshift({ originalUrl: url.value, shortenedUrl });
+    recentShortenedUrls.value.unshift({
+      originalUrl: url.value,
+      shortenedUrl,
+      clicks: data.clicks.length,
+    });
     recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 4);
     url.value = "";
   } else {

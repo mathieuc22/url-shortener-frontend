@@ -19,7 +19,7 @@ async function handleSubmit(url) {
       shortenedUrl,
       clicks: data.clicks.length,
     });
-    recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 4);
+    recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 3);
     url.value = "";
   } else {
     console.error("Erreur lors de la création de l'URL raccourcie");

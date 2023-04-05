@@ -10,8 +10,12 @@
         </button>
         <a class="last-results__shortened-url" :href="result.shortenedUrl" target="_blank" rel="noopener noreferrer">{{
           result.shortenedUrl }}</a>
-        <span class="last-results__original-url">URL d'origine : {{ result.originalUrl }}</span>
-        <span class="last-results__original-url" v-if="result.clicks > 0">Clicks : {{ result.clicks }}</span>
+        <qrcode-vue :value="result.shortenedUrl" :options="{ size: 100 }"></qrcode-vue>
+        <div class="last-results__description">
+          <span class="last-results__original-url">URL d'origine :</span>
+          <span class="last-results__original-url">{{ result.originalUrl }}</span>
+          <span class="last-results__original-url" v-if="result.clicks > 0">Nombre de clics : {{ result.clicks }}</span>
+        </div>
       </li>
     </ul>
   </section>
@@ -19,6 +23,7 @@
   
 <script setup>
 import { useShortenedUrls } from "@/composables/useShortenedUrls";
+import QrcodeVue from 'qrcode.vue';
 
 const { recentShortenedUrls } = useShortenedUrls();
 
@@ -58,23 +63,25 @@ const copy = (url) => {
 <style scoped>
 .last-results__list {
   display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 1rem;
-  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .last-results__list-item {
+  width: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 5px;
-  background-color: var(--color-light);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--color-light);
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -82,9 +89,8 @@ const copy = (url) => {
 
 .last-results__shortened-url {
   position: relative;
-  background-color: var(--color-light);
   font-weight: 500;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .last-results__shortened-url:before {
@@ -126,10 +132,21 @@ const copy = (url) => {
   display: block;
 }
 
+.last-results__description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
 .last-results__original-url {
-  display: none;
-  padding: 10px;
-  flex: 1;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -199,21 +216,7 @@ const copy = (url) => {
   content: 'Copié!';
 }
 
-
-
-@media screen and (min-width: 768px) {
-  .last-results__list-item {
-    flex-direction: row;
-  }
-
-
-  .last-results__shortened-url {
-    margin-left: 1rem;
-  }
-
-  .last-results__original-url {
-    display: block;
-  }
+.qrcode-container {
+  margin-top: 1rem;
 }
 </style>
-  

@@ -7,7 +7,7 @@
                     <a href="https://short.cloudypanda.me/docs" target="_blank" rel="noopener noreferrer">API</a>
                 </li>
                 <li class="footer__link-item">
-                    <a href="https://github.com/mathieuc22/url_shortener/blob/main/LICENSE" target="_blank"
+                    <a href="https://github.com/mathieuc22/url-shortener-frontend/blob/main/LICENSE" target="_blank"
                         rel="noopener noreferrer">Licence</a>
                 </li>
             </ul>

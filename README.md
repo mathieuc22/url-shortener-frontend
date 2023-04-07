@@ -1,7 +1,52 @@
-# Vue 3 + Vite
+# LienCourt Frontend
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Ce dépôt contient le frontend de LienCourt, une application web de raccourcissement d'URL amusante et réactive construite avec Vue.js. Elle s'intègre parfaitement avec l'API LienCourt pour vous offrir une expérience utilisateur fluide et agréable.
 
-## Recommended IDE Setup
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/mathieuc22/url-shortener-frontend/blob/main/LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/36b0faea-5466-4bfa-a9e4-313d0ec5d113/deploy-status)](https://app.netlify.com/sites/gleaming-pegasus-de71aa/deploys)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[<img src="./screenshot.png" height="450px"/>](screenshot.png)
+
+## Fonctionnalités
+
+- Création de liens raccourcis
+- Affichage des derniers liens raccourcis
+- Copie des liens raccourcis dans le presse-papiers
+- Génération de QR codes pour les liens raccourcis
+- Interface utilisateur conviviale et réactive
+
+## Installation et utilisation
+
+1. Clonez ce dépôt :
+
+```
+git clone https://github.com/mathieuc22/url-shortener-frontend.git
+```
+
+2. Accédez au dossier du projet :
+
+```
+cd url-shortener-frontend
+```
+
+3. Installez les dépendances :
+
+```
+npm install
+```
+
+4. Lancez le serveur de développement :
+
+```
+npm run build
+```
+
+Les fichiers statiques seront générés dans le dossier `dist`.
+
+## Contribuer
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir des issues ou à proposer des pull requests pour améliorer l'application.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](https://github.com/mathieuc22/url-shortener-frontend/blob/main/LICENSE) pour plus de détails.

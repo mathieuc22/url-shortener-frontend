@@ -41,7 +41,7 @@ npm install
 npm run build
 ```
 
-Les fichiers statiques seront générés dans le dossier `dist`.
+Les fichiers statiques seront générés dans le dossier `dist`. Côté serveur, il est nécessaire de définir une variable d'environnement `API_BASE_URL`.
 
 ## Contribuer
 

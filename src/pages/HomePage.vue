@@ -15,7 +15,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import LastResults from "@/components/LastResults.vue";
 import AdvantagesSection from "@/components/AdvantagesSection.vue";
 import ApiSection from "@/components/ApiSection.vue";
-import ContactCTA from "../components/ContactCTA.vue";
+import ContactCTA from "@/components/ContactCTA.vue";
 </script>
 
 <style>

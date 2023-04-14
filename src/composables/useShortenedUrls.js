@@ -13,7 +13,7 @@ async function handleSubmit(url) {
   );
   if (response.ok) {
     const data = await response.json();
-    const shortenedUrl = `${API_BASE_URL}/${data.id}`;
+    const shortenedUrl = `${window.location.origin}/${data.id}`;
     recentShortenedUrls.value.unshift({
       originalUrl: url.value,
       shortenedUrl,

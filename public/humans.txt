@@ -1,0 +1,14 @@
+# humanstxt.org/
+
+   /* TEAM */
+	Creator: Mathieu Collet
+	Contact: mathieu.collet [at] gmail.com
+	Twitter: @twitt4mat
+	from: Montrouge, near Paris, France
+
+    /* SITE */
+    Last update: 2023/14/17
+    Language: French
+    Doctype: HTML5
+    Framework: Vue.js
+	IDE: Visual Studio Code

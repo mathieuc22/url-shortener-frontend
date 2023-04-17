@@ -16,29 +16,29 @@
 
       <p>Vous pouvez également fournir le lien en JSON...</p>
       <pre>
-                  <code>
-    // Exemple d'intégration en JavaScript avec un JSON
-    async function shortenUrlWithJson(url) {
-      const response = await fetch('https://short.cloudypanda.me/urls', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url }),
-      });
-      const data = await response.json();
-      return data;
-    }
-                  </code>
-                  </pre>
+        <code>
+  // Exemple d'intégration en JavaScript avec un JSON
+  async function shortenUrlWithJson(url) {
+  const response = await fetch('https://api.lienb.fr/urls', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ url }),
+  });
+  const data = await response.json();
+  return data;
+  }
+        </code>
+      </pre>
 
       <p>... ou encore utiliser l'API avec curl :</p>
       <pre>
-            <code>
-    // Créer un lien raccourci en utilisant curl
-    curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' https://short.cloudypanda.me/urls
-            </code>
-            </pre>
+        <code>
+  // Créer un lien raccourci en utilisant curl
+  curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' https://api.lienb.fr/urls
+        </code>
+      </pre>
     </section>
 
     <section class="section">
@@ -48,7 +48,7 @@
         définitions des modèles et des exemples de code supplémentaires, visitez
         notre page de documentation Swagger :
       </p>
-      <a class="button" href="https://short.cloudypanda.me/docs" target="_blank" rel="noopener noreferrer">
+      <a class="button" href="https://api.lienb.fr/docs" target="_blank" rel="noopener noreferrer">
         Accéder à la documentation
       </a>
     </section>

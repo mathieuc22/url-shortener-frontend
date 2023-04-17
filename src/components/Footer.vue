@@ -4,7 +4,7 @@
             <p class="footer__text">&copy; 2023 lienb.fr</p>
             <ul class="footer__links">
                 <li class="footer__link-item">
-                    <a href="https://short.cloudypanda.me/docs" target="_blank" rel="noopener noreferrer">API</a>
+                    <a href="https://api.lienb.fr/docs" target="_blank" rel="noopener noreferrer">API</a>
                 </li>
                 <li class="footer__link-item">
                     <a href="https://github.com/mathieuc22/url-shortener-frontend/blob/main/LICENSE" target="_blank"

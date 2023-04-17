@@ -4,7 +4,7 @@
   // Exemple d'intégration en JavaScript
   async function shortenUrl(url) {
     const response = await fetch(
-      `https://short.cloudypanda.me/urls?url=${encodeURIComponent(url)}`,
+      `https://api.lienb.fr/urls?url=${encodeURIComponent(url)}`,
       {
         method: "POST",
       }

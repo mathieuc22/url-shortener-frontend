@@ -1,9 +1,11 @@
 <template>
   <Header></Header>
   <router-view></router-view>
-  <div class="back-to-top" v-show="isScrolled" @click="scrollToTop">
-    <font-awesome-icon icon="arrow-up" />
-  </div>
+  <transition name="fade">
+    <div class="back-to-top" v-show="isScrolled" @click="scrollToTop">
+      <font-awesome-icon icon="arrow-up" />
+    </div>
+  </transition>
   <Footer></Footer>
 </template>
 
@@ -32,8 +34,8 @@ onBeforeUnmount(() => {
 <style scoped>
 .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 65px;
+  right: 25px;
   background-color: var(--color-dark);
   color: var(--color-light);
   height: 35px;
@@ -52,5 +54,15 @@ onBeforeUnmount(() => {
 .back-to-top:hover {
   background-color: var(--color-info);
   opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

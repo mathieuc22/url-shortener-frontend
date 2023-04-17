@@ -5,11 +5,15 @@
     <h2 class="homepage-section__title">Derniers liens raccourcis</h2>
     <ul class="last-results__list">
       <li class="last-results__list-item" v-for="(result, index) in recentShortenedUrls" :key="index">
+        <button class="delete-icon" @click="removeItem(index)">
+          <font-awesome-icon icon="trash" />
+        </button>
         <button class="copy-icon" @click="copy(result.shortenedUrl)">
           <font-awesome-icon icon="link" />
         </button>
-        <a class="last-results__shortened-url" :href="result.shortenedUrl" target="_blank" rel="noopener noreferrer">{{
-          result.shortenedUrl }}</a>
+        <a class="last-results__shortened-url" @click="result.clicks += 1" :href="result.shortenedUrl" target="_blank"
+          rel="noopener noreferrer">{{
+            result.shortenedUrl }}</a>
         <qrcode-vue :value="result.shortenedUrl" :options="{ size: 100 }"></qrcode-vue>
         <div class="last-results__description">
           <span class="last-results__original-url">URL d'origine :</span>
@@ -58,6 +62,10 @@ const copy = (url) => {
   toClipoard(url);
 }
 
+const removeItem = (index) => {
+  recentShortenedUrls.value.splice(index, 1);
+}
+
 </script>
   
 <style scoped>
@@ -74,6 +82,7 @@ const copy = (url) => {
 }
 
 .last-results__list-item {
+  position: relative;
   width: 250px;
   height: 300px;
   display: flex;
@@ -163,6 +172,7 @@ const copy = (url) => {
   cursor: pointer;
 }
 
+.delete-icon:hover,
 .copy-icon:hover {
   background-color: var(--color-info);
 
@@ -218,5 +228,21 @@ const copy = (url) => {
 
 .qrcode-container {
   margin-top: 1rem;
+}
+
+.delete-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  border-radius: 50%;
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  cursor: pointer;
+  font-size: 10px;
 }
 </style>

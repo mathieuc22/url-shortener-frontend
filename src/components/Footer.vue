@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <div class="footer__container">
-            <p class="footer__text">&copy; 2023 LienCourt.fr</p>
+            <p class="footer__text">&copy; 2023 lienb.fr</p>
             <ul class="footer__links">
                 <li class="footer__link-item">
                     <a href="https://short.cloudypanda.me/docs" target="_blank" rel="noopener noreferrer">API</a>

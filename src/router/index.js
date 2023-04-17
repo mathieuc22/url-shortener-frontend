@@ -14,9 +14,9 @@ const routes = [
     name: "Home",
     component: HomePage,
     meta: {
-      title: "LienCourt.fr - Accueil",
+      title: "lienb.fr - Votre plan B pour des liens brefs et efficaces !",
       description:
-        "Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français.",
+        "Réduisez et partagez facilement vos liens avec lienb.fr, le service de raccourcissement de liens français.",
     },
   },
   {
@@ -24,9 +24,9 @@ const routes = [
     name: "ApiDocs",
     component: APIPage,
     meta: {
-      title: "LienCourt.fr - Documentation API",
+      title: "lienb.fr - Documentation API",
       description:
-        "Découvrez comment utiliser notre API pour intégrer LienCourt.fr dans vos applications et services.",
+        "Découvrez comment utiliser notre API pour intégrer lienb.fr dans vos applications et services.",
     },
   },
   {
@@ -34,9 +34,9 @@ const routes = [
     name: "About",
     component: AboutPage,
     meta: {
-      title: "LienCourt.fr - À propos",
+      title: "lienb.fr - À propos",
       description:
-        "Apprenez-en plus sur LienCourt.fr, le service de raccourcissement de liens français.",
+        "Apprenez-en plus sur lienb.fr, le service de raccourcissement de liens français.",
     },
   },
   {
@@ -68,7 +68,7 @@ const router = createRouter({
 
 router.afterEach((to) => {
   // Met à jour le titre de la page
-  document.title = to.meta.title || "LienCourt.fr";
+  document.title = to.meta.title || "lienb.fr";
 
   // Met à jour la balise "description"
   const descriptionMetaTag = document.querySelector('meta[name="description"]');
@@ -77,7 +77,7 @@ router.afterEach((to) => {
   } else {
     descriptionMetaTag.setAttribute(
       "content",
-      "Réduisez et partagez facilement vos liens avec LienCourt.fr, le service de raccourcissement de liens français."
+      "Réduisez et partagez facilement vos liens avec lienb.fr, le service de raccourcissement de liens français."
     );
   }
 });

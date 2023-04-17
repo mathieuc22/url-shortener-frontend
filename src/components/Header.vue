@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <router-link to="/" class="nav__logo">LienCourt.fr</router-link>
+        <router-link to="/" class="nav__logo">lienb.fr</router-link>
         <button class="hamburger" @click="toggleMenu" v-if="!menuOpen">
           <font-awesome-icon icon="bars" />
         </button>

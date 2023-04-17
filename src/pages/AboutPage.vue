@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <section class="section">
-      <h1 class="section__title">À propos de LienCourt.fr</h1>
+      <h1 class="section__title">À propos de lienb.fr</h1>
       <p class="section__description">
-        LienCourt.fr est un service de réduction de liens qui permet de
+        lienb.fr est un service de réduction de liens qui permet de
         raccourcir facilement des URL longues et complexes. Notre mission est de
         simplifier la gestion des liens et d'améliorer leur lisibilité pour les
         utilisateurs finaux. Grâce à notre API REST, les développeurs peuvent

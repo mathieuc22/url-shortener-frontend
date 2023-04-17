@@ -8,7 +8,7 @@
     </picture>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <h1 class="hero__title">Bienvenue sur LienCourt.fr</h1>
+      <h1 class="hero__title">Bienvenue sur lienb.fr</h1>
       <p class="hero__description">
         Raccourcissez vos liens et obtenez des statistiques de clics
       </p>

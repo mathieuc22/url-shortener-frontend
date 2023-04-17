@@ -1,5 +1,5 @@
 <template>
-  <h2 class="homepage-section__title">Pourquoi choisir LienCourt.fr ?</h2>
+  <h2 class="homepage-section__title">Pourquoi choisir lienb.fr ?</h2>
   <div class="advantages__cards">
     <div class="advantages-card">
       <font-awesome-icon icon="user-clock" class="advantages-card__icon" />

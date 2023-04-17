@@ -1,5 +1,11 @@
 <template>
   <section class="hero">
+    <picture ref="heroPicture">
+      <source media="(min-width: 768px)" srcset="@/assets/hero.webp" />
+      <source media="(min-width: 425px)" srcset="@/assets/hero-tablet.webp" />
+      <source media="(max-width: 424px)" srcset="@/assets/hero-mobile.webp" />
+      <img ref="heroImage" alt="Hero background" loading="lazy" />
+    </picture>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__title">Bienvenue sur LienCourt.fr</h1>
@@ -17,10 +23,6 @@ import ShortenerForm from "@/components/ShortenerForm.vue";
 
 <style scoped>
 .hero {
-  background-image: url("@/assets/hero.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +31,21 @@ import ShortenerForm from "@/components/ShortenerForm.vue";
   position: relative;
 }
 
+.hero picture,
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero img {
+  filter: brightness(0.4);
+}
+
 .hero__overlay {
-  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   right: 0;

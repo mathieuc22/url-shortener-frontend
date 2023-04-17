@@ -3,7 +3,8 @@
     <h2 class="homepage-section__title">API REST pour les développeurs</h2>
     <div class="api-section">
       <div class="api-section__column">
-        <img class="api-section__illustration" :src="illustration" alt="Femme qui travaille sur son ordinateur">
+        <img class="api-section__illustration" :src="illustration" alt="Femme qui travaille sur son ordinateur"
+          loading="lazy">
         <p class="api-section__description">
           Utilisez notre API REST pour intégrer facilement la réduction d'URL dans vos
           applications. Consultez la documentation complète pour plus d'informations.
@@ -20,7 +21,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 import ApiCode from "./ApiCode.vue";
-import illustration from "@/assets/woman-working-on-computer.png"
+import illustration from "@/assets/woman-working-on-computer.webp"
 const router = useRouter();
 </script>
   

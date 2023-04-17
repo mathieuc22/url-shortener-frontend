@@ -4,7 +4,7 @@
       <source media="(min-width: 768px)" srcset="@/assets/hero.webp" />
       <source media="(min-width: 425px)" srcset="@/assets/hero-tablet.webp" />
       <source media="(max-width: 424px)" srcset="@/assets/hero-mobile.webp" />
-      <img ref="heroImage" alt="Hero background" loading="lazy" />
+      <img ref="heroImage" alt="Hero background" loading="eager" />
     </picture>
     <div class="hero__overlay"></div>
     <div class="hero__content">

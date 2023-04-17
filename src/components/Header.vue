@@ -1,8 +1,11 @@
 <template>
   <header class="header">
-    <div class="container">
+    <div class="header-container">
+
       <nav class="nav">
-        <router-link to="/" class="nav__logo">lienb.fr</router-link>
+        <router-link to="/" class="nav__logo">
+          <img :src="logo" alt="lienb.fr" />
+        </router-link>
         <button type="button" class="hamburger" @click="toggleMenu" v-if="!menuOpen" aria-label="Ouvrir le menu">
           <font-awesome-icon icon="bars" />
         </button>
@@ -32,12 +35,15 @@
 import { ref } from "vue";
 import themeStore from "@/themeStore";
 
+const logo = ref('/logo.png');
+
 const themeIcon = ref("sun");
 const menuOpen = ref(false);
 
 const toggleTheme = () => {
   themeStore.toggleTheme();
   themeIcon.value = themeStore.isDark ? "moon" : "sun";
+  logo.value = themeStore.isDark ? '/logo-dark.png' : '/logo.png';
 };
 
 const toggleMenu = () => {
@@ -52,10 +58,12 @@ const closeMenu = () => {
 <style scoped>
 .header {
   background-color: var(--color-primary);
-  padding: 1rem 0;
+  padding: 0 1rem;
 }
 
-.container {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,11 +76,6 @@ const closeMenu = () => {
   align-items: center;
   justify-content: space-between;
   flex: 1;
-}
-
-.nav__logo {
-  font-family: var(--font-family-heading);
-  font-size: 1.5rem;
 }
 
 .hamburger {

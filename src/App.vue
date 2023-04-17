@@ -34,7 +34,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .back-to-top {
   position: fixed;
-  bottom: 65px;
+  bottom: 45px;
   right: 25px;
   background-color: var(--color-dark);
   color: var(--color-light);

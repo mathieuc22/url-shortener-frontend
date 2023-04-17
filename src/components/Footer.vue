@@ -17,9 +17,11 @@
   
 <style>
 .footer {
-    margin-top: 2rem;
     background-color: var(--color-light);
-    padding: 20px 0;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer__container {

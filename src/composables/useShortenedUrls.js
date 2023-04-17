@@ -14,12 +14,25 @@ async function handleSubmit(url) {
   if (response.ok) {
     const data = await response.json();
     const shortenedUrl = `${window.location.origin}/${data.id}`;
-    recentShortenedUrls.value.unshift({
-      originalUrl: url.value,
-      shortenedUrl,
-      clicks: data.clicks.length,
-    });
-    recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 3);
+
+    // Vérifie si l'URL raccourcie est déjà présente dans la liste
+    const existingUrlIndex = recentShortenedUrls.value.findIndex(
+      (item) => item.shortenedUrl === shortenedUrl
+    );
+
+    if (existingUrlIndex !== -1) {
+      // Met à jour le nombre de clics
+      recentShortenedUrls.value[existingUrlIndex].clicks = data.clicks.length;
+    } else {
+      // Ajoute l'URL raccourcie à la liste
+      recentShortenedUrls.value.unshift({
+        originalUrl: url.value,
+        shortenedUrl,
+        clicks: data.clicks.length,
+      });
+      recentShortenedUrls.value = recentShortenedUrls.value.slice(0, 3);
+    }
+
     url.value = "";
   } else {
     console.error("Erreur lors de la création de l'URL raccourcie");

@@ -3,10 +3,10 @@
     <div class="container">
       <nav class="nav">
         <router-link to="/" class="nav__logo">lienb.fr</router-link>
-        <button class="hamburger" @click="toggleMenu" v-if="!menuOpen">
+        <button type="button" class="hamburger" @click="toggleMenu" v-if="!menuOpen" aria-label="Ouvrir le menu">
           <font-awesome-icon icon="bars" />
         </button>
-        <button class="hamburger close" @click="toggleMenu" v-if="menuOpen">
+        <button type="button" class="hamburger close" @click="toggleMenu" v-if="menuOpen" aria-label="Fermer le menu">
           <font-awesome-icon icon="times" />
         </button>
         <ul :class="{ nav__links: true, 'nav__links--visible': menuOpen }">
@@ -21,7 +21,7 @@
           </li>
         </ul>
       </nav>
-      <button class="theme-toggle" @click="toggleTheme">
+      <button type="button" class="theme-toggle" @click="toggleTheme" aria-label="Basculer le thème">
         <font-awesome-icon :icon="themeIcon" />
       </button>
     </div>

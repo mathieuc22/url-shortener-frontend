@@ -35,7 +35,7 @@
 import { ref } from "vue";
 import themeStore from "@/themeStore";
 
-const logo = ref('/logo.png');
+const logo = ref('/logo.webp');
 
 const themeIcon = ref("sun");
 const menuOpen = ref(false);
@@ -43,7 +43,7 @@ const menuOpen = ref(false);
 const toggleTheme = () => {
   themeStore.toggleTheme();
   themeIcon.value = themeStore.isDark ? "moon" : "sun";
-  logo.value = themeStore.isDark ? '/logo-dark.png' : '/logo.png';
+  logo.value = themeStore.isDark ? '/logo-dark.webp' : '/logo.webp';
 };
 
 const toggleMenu = () => {
@@ -76,6 +76,14 @@ const closeMenu = () => {
   align-items: center;
   justify-content: space-between;
   flex: 1;
+}
+
+.nav__logo {
+  height: 75px;
+}
+
+.nav__logo img {
+  height: 100%;
 }
 
 .hamburger {

@@ -2,20 +2,42 @@
   <form class="shortener-form" @submit.prevent="handleSubmit">
     <div class="input-group">
       <label for="url" class="input-label">URL à raccourcir</label>
-      <input id="url" v-model="url" type="url" placeholder="https://example.com" class="input" required />
+      <input id="url" v-model="url" type="url" placeholder="https://example.com" class="input"
+        :class="{ 'input--error': error }" @input="validateUrl" />
+      <p v-if="error" class="error-message">{{ error }}</p>
     </div>
-    <button class="button" type="submit">Raccourcir</button>
+    <button class="button" type="submit" :disabled="error || !url">Raccourcir</button>
   </form>
 </template>
-  
+
 <script setup>
 import { ref } from "vue";
 import { useShortenedUrls } from "@/composables/useShortenedUrls";
 
 const url = ref("");
-const { handleSubmit } = useShortenedUrls(url);
-</script>
+const error = ref("");
+const { handleSubmit } = useShortenedUrls(url, error);
 
+const validateUrl = () => {
+  error.value = "";
+
+  if (url.value === "") {
+    error.value = "L'URL ne peut pas être vide.";
+    return;
+  }
+
+  try {
+    const urlObj = new URL(url.value);
+
+    if (urlObj.hostname === "lienb.fr" || urlObj.hostname === "localhost") {
+      error.value = "Les URL lienb.fr et localhost ne sont pas autorisées.";
+      return;
+    }
+  } catch (e) {
+    error.value = "L'URL est invalide.";
+  }
+};
+</script>
   
 <style scoped>
 .shortener-form {
@@ -30,6 +52,7 @@ const { handleSubmit } = useShortenedUrls(url);
 }
 
 .input-group {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -59,6 +82,16 @@ const { handleSubmit } = useShortenedUrls(url);
   border-color: var(--color-secondary);
 }
 
+.input--error {
+  border-color: var(--color-danger);
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
 .generated-links {
   display: flex;
   flex-direction: column;
@@ -82,6 +115,14 @@ const { handleSubmit } = useShortenedUrls(url);
 
   .submit-button {
     flex-shrink: 0;
+  }
+
+  .error-message {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+    width: 100%;
   }
 }
 </style>

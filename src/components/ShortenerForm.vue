@@ -6,7 +6,10 @@
         :class="{ 'input--error': error }" @input="validateUrl" />
       <p v-if="error" class="error-message">{{ error }}</p>
     </div>
-    <button class="button" type="submit" :disabled="error || !url">Raccourcir</button>
+    <button class="button" type="submit" :disabled="error || !url || loading">
+      <span v-if="!loading">Raccourcir</span>
+      <font-awesome-icon v-if="loading" icon="spinner" class="button__spinner" />
+    </button>
   </form>
 </template>
 
@@ -16,7 +19,8 @@ import { useShortenedUrls } from "@/composables/useShortenedUrls";
 
 const url = ref("");
 const error = ref("");
-const { handleSubmit } = useShortenedUrls(url, error);
+const loading = ref(false);
+const { handleSubmit } = useShortenedUrls(url, error, loading);
 
 const validateUrl = () => {
   error.value = "";
@@ -67,6 +71,7 @@ const validateUrl = () => {
 
 .input {
   flex-grow: 1;
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid var(--color-light);
@@ -97,6 +102,31 @@ const validateUrl = () => {
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+.button:disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button:disabled:hover {
+  background-color: var(--color-disabled);
+  color: var(--color-light);
+}
+
+.button__spinner {
+  animation: buttonSpinner 1s linear infinite;
+}
+
+@keyframes buttonSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 768px) {

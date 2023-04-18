@@ -1,6 +1,6 @@
-# LienCourt Frontend
+# lienb.fr Frontend
 
-Ce dépôt contient le frontend de LienCourt, une application web de raccourcissement d'URL amusante et réactive construite avec Vue.js. Elle s'intègre parfaitement avec l'API LienCourt pour vous offrir une expérience utilisateur fluide et agréable.
+Ce dépôt contient le frontend de lienb.fr, une application web de raccourcissement d'URL amusante et réactive construite avec Vue.js. Elle s'intègre parfaitement avec l'[API lienb.fr](https://github.com/mathieuc22/url_shortener) pour vous offrir une expérience utilisateur fluide et agréable.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/mathieuc22/url-shortener-frontend/blob/main/LICENSE)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/36b0faea-5466-4bfa-a9e4-313d0ec5d113/deploy-status)](https://app.netlify.com/sites/gleaming-pegasus-de71aa/deploys)

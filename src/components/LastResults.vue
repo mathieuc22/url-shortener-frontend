@@ -3,22 +3,22 @@
 <template>
   <section class="homepage-section" v-if="recentShortenedUrls.length > 0">
     <h2 class="homepage-section__title">Derniers liens raccourcis</h2>
-    <ul class="last-results__list">
-      <li class="last-results__list-item" v-for="(result, index) in recentShortenedUrls" :key="index">
+    <ul class="cards">
+      <li class="card" v-for="(result, index) in recentShortenedUrls" :key="index">
         <button class="delete-icon" @click="removeItem(index)">
           <font-awesome-icon icon="trash" />
         </button>
         <button class="copy-icon" @click="copy(result.shortenedUrl)">
           <font-awesome-icon icon="link" />
         </button>
-        <a class="last-results__shortened-url" @click="result.clicks += 1" :href="result.shortenedUrl" target="_blank"
+        <a class="card__shortened-url" @click="result.clicks += 1" :href="result.shortenedUrl" target="_blank"
           rel="noopener noreferrer">{{
             result.shortenedUrl }}</a>
         <qrcode-vue :value="result.shortenedUrl" :options="{ size: 100 }"></qrcode-vue>
-        <div class="last-results__description">
-          <span class="last-results__original-url">URL d'origine :</span>
-          <span class="last-results__original-url">{{ result.originalUrl }}</span>
-          <span class="last-results__original-url" v-if="result.clicks > 0">Nombre de clics : {{ result.clicks }}</span>
+        <div class="card__description">
+          <span class="card__original-url">URL d'origine :</span>
+          <span class="card__original-url">{{ result.originalUrl }}</span>
+          <span class="card__original-url" v-if="result.clicks > 0">Nombre de clics : {{ result.clicks }}</span>
         </div>
       </li>
     </ul>
@@ -69,40 +69,18 @@ const removeItem = (index) => {
 </script>
   
 <style scoped>
-.last-results__list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.last-results__list-item {
-  position: relative;
+.card {
   width: 250px;
   height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border: 2px solid var(--color-light);
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-.last-results__shortened-url {
+.card__shortened-url {
   position: relative;
   font-weight: 500;
   padding: 10px 0;
 }
 
-.last-results__shortened-url:before {
+.card__shortened-url:before {
   content: '';
   display: none;
   position: absolute;
@@ -118,7 +96,7 @@ const removeItem = (index) => {
   border-top: 5px solid rgba(0, 0, 0, .72);
 }
 
-.last-results__shortened-url:after {
+.card__shortened-url:after {
   content: 'Ouvrir le lien';
   display: none;
   position: absolute;
@@ -136,12 +114,12 @@ const removeItem = (index) => {
   border-radius: 3px;
 }
 
-.last-results__shortened-url:hover:before,
-.last-results__shortened-url:hover:after {
+.card__shortened-url:hover:before,
+.card__shortened-url:hover:after {
   display: block;
 }
 
-.last-results__description {
+.card__description {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -150,7 +128,7 @@ const removeItem = (index) => {
   font-size: 0.8rem;
 }
 
-.last-results__original-url {
+.card__original-url {
   max-width: 100%;
   text-align: center;
   white-space: nowrap;

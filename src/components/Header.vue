@@ -14,13 +14,13 @@
         </button>
         <ul :class="{ nav__links: true, 'nav__links--visible': menuOpen }">
           <li>
-            <router-link to="/api-docs" @click="closeMenu">Documentation API</router-link>
+            <router-link to="/about" @click="closeMenu">À propos</router-link>
           </li>
           <li>
             <router-link to="/statistics" @click="closeMenu">Statistiques</router-link>
           </li>
           <li>
-            <router-link to="/about" @click="closeMenu">À propos</router-link>
+            <router-link to="/api-docs" @click="closeMenu">API</router-link>
           </li>
           <li>
             <router-link to="/contact" @click="closeMenu">Contact</router-link>

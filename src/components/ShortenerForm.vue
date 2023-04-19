@@ -49,38 +49,10 @@ const validateUrl = () => {
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
-  background-color: var(--color-dark);
+  background-color: var(--color-light);
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.input-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.input-label {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--color-light);
-  margin-bottom: 0.5rem;
-}
-
-.input {
-  flex-grow: 1;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid var(--color-light);
-  border-radius: 0.25rem;
-  outline: none;
-  transition: border-color 0.15s ease-in-out;
-  background-color: white;
-  color: var(--color-dark);
-  cursor: text;
 }
 
 @media screen and (min-width: 768px) {

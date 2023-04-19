@@ -26,27 +26,27 @@
                 </button>
             </form>
             <div v-if="error" class="error-message">{{ error }}</div>
+        </section>
 
-            <div v-if="statistics && !error">
-                <h2 class="section__title">Total de clics : {{ statistics.total_clicks }}</h2>
-                <div class="statistics-section">
-                    <h3 class="statistics-section__title">Clics par jour :</h3>
-                    <ul class="statistics-list">
-                        <li v-for="(count, date) in statistics.clicks_per_day" :key="date">
-                            <span class="statistics-item__date">{{ date }}</span>
-                            <span class="statistics-item__count">{{ count }}</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="statistics-section">
-                    <h3 class="statistics-section__title">Référents :</h3>
-                    <ul class="statistics-list">
-                        <li v-for="(count, referrer) in statistics.referrers" :key="referrer">
-                            <span class="statistics-item__referrer">{{ referrer || 'Direct' }}</span>
-                            <span class="statistics-item__count">{{ count }}</span>
-                        </li>
-                    </ul>
-                </div>
+        <section class="section" v-if="statistics && !error">
+            <h2 class="section__title">Total de clics : {{ statistics.total_clicks }}</h2>
+            <div class="statistics-section">
+                <h3 class="statistics-section__title">Clics par jour :</h3>
+                <ul class="statistics-list">
+                    <li v-for="(count, date) in statistics.clicks_per_day" :key="date">
+                        <span class="statistics-item__date">{{ date }}</span>
+                        <span class="statistics-item__count">{{ count }}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="statistics-section">
+                <h3 class="statistics-section__title">Référents :</h3>
+                <ul class="statistics-list">
+                    <li v-for="(count, referrer) in statistics.referrers" :key="referrer">
+                        <span class="statistics-item__referrer">{{ referrer || 'Direct' }}</span>
+                        <span class="statistics-item__count">{{ count }}</span>
+                    </li>
+                </ul>
             </div>
 
         </section>
@@ -96,30 +96,8 @@ async function fetchStatistics() {
     max-width: 250px;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.input-label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
-}
-
-.input {
-    flex-grow: 1;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: 0.25rem;
-    outline: none;
-    transition: border-color 0.15s ease-in-out;
-}
-
 .statistics-section {
+    width: 100%;
     margin-bottom: 1.5rem;
 }
 

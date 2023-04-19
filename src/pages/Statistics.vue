@@ -29,6 +29,11 @@
         </section>
 
         <section class="section" v-if="statistics && !error">
+            <div class="link-identity">
+                <p><strong>URL d'origine :</strong> {{ statistics.url }}</p>
+                <p><strong>Date de création :</strong> {{ new Date(statistics.created_at).toLocaleDateString() }}</p>
+                <p><strong>Lien court :</strong> {{ statistics.shortened_url }}</p>
+            </div>
             <h2 class="section__title">Total de clics : {{ statistics.total_clicks }}</h2>
             <div class="statistics-section">
                 <h3 class="statistics-section__title">Clics par jour :</h3>
@@ -90,7 +95,13 @@ async function fetchStatistics() {
     loading.value = false;
 
     if (response.ok) {
-        statistics.value = await response.json();
+        const data = await response.json();
+        const shortenedUrl = `${window.location.origin}/${data.id}`;
+
+        statistics.value = {
+            ...data,
+            shortened_url: shortenedUrl,
+        };
     } else {
         error.value = "Erreur lors de la récupération des statistiques. Veuillez vérifier l'ID ou le lien court.";
     }
@@ -99,6 +110,13 @@ async function fetchStatistics() {
 
   
 <style scoped>
+.link-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
 .statistics-form {
     display: flex;
     flex-direction: column;

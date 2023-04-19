@@ -5,9 +5,9 @@ import AboutPage from "../pages/AboutPage.vue";
 import APIPage from "../pages/APIPage.vue";
 import Contact from "@/pages/Contact.vue";
 import Statistics from "@/pages/Statistics.vue";
-import FormSuccess from "@/components/FormSuccess.vue";
-import FormError from "@/components/FormError.vue";
-import Redirect from "@/components/Redirect.vue";
+import Redirect from "@/pages/Redirect.vue";
+import FormSuccess from "@/components/error/FormSuccess.vue";
+import FormError from "@/components/error/FormError.vue";
 
 const routes = [
   {

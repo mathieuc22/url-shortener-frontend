@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import ShortenerForm from "@/components/ShortenerForm.vue";
+import ShortenerForm from "@/components/home/ShortenerForm.vue";
 </script>
 
 <style scoped>

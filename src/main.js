@@ -15,7 +15,7 @@ import {
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import "./style.css";
+import "./styles/style.css";
 
 import App from "./App.vue";
 import router from "./router";

@@ -11,11 +11,11 @@
 </template>
 
 <script setup>
-import HeroSection from "@/components/HeroSection.vue";
-import LastResults from "@/components/LastResults.vue";
-import AdvantagesSection from "@/components/AdvantagesSection.vue";
-import ApiSection from "@/components/ApiSection.vue";
-import ContactCTA from "@/components/ContactCTA.vue";
+import HeroSection from "@/components/home/HeroSection.vue";
+import LastResults from "@/components/home/LastResults.vue";
+import AdvantagesSection from "@/components/home/AdvantagesSection.vue";
+import ApiSection from "@/components/home/ApiSection.vue";
+import ContactCTA from "@/components/home/ContactCTA.vue";
 </script>
 
 <style>

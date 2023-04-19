@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref } from "vue";
-import themeStore from "@/themeStore";
+import themeStore from "@/store";
 
 const logo = ref('/logo.webp');
 

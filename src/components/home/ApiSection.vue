@@ -20,7 +20,7 @@
   
 <script setup>
 import { useRouter } from "vue-router";
-import ApiCode from "./ApiCode.vue";
+import ApiCode from "@/components/common/ApiCode.vue";
 import illustration from "@/assets/woman-working-on-computer.webp"
 const router = useRouter();
 </script>

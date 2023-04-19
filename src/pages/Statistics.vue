@@ -54,8 +54,9 @@
 </template>
   
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { useRouter } from "vue-router";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -63,6 +64,16 @@ const inputId = ref("");
 const statistics = ref(null);
 const loading = ref(false);
 const error = ref("");
+
+const router = useRouter();
+
+onMounted(async () => {
+    const queryParams = router.currentRoute.value.query;
+    if (queryParams.id) {
+        inputId.value = queryParams.id;
+        await fetchStatistics();
+    }
+});
 
 async function fetchStatistics() {
     if (!inputId.value) {
@@ -85,6 +96,7 @@ async function fetchStatistics() {
     }
 }
 </script>
+
   
 <style scoped>
 .statistics-form {

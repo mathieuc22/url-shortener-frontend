@@ -18,8 +18,15 @@
         <div class="card__description">
           <span class="card__original-url">URL d'origine :</span>
           <span class="card__original-url">{{ result.originalUrl }}</span>
-          <span class="card__original-url" v-if="result.clicks > 0">Nombre de clics : {{ result.clicks }}</span>
+          <span class="card__original-url" v-if="result.clicks > 0">
+            Nombre de clics : {{ result.clicks }}
+            <br>
+            <router-link :to="{ name: 'Statistics', query: { id: result.shortenedUrl } }" class="card__stats-link">
+              (Voir les statistiques)
+            </router-link>
+          </span>
         </div>
+
       </li>
     </ul>
   </section>
@@ -71,7 +78,7 @@ const removeItem = (index) => {
 <style scoped>
 .card {
   width: 250px;
-  height: 300px;
+  height: 320px;
 }
 
 .card__shortened-url {
@@ -135,7 +142,6 @@ const removeItem = (index) => {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .copy-icon {
   width: 32px;

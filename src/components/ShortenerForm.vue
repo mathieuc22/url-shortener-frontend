@@ -83,52 +83,6 @@ const validateUrl = () => {
   cursor: text;
 }
 
-.input:focus {
-  border-color: var(--color-secondary);
-}
-
-.input--error {
-  border-color: var(--color-danger);
-}
-
-.error-message {
-  color: var(--color-danger);
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.generated-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.button:disabled {
-  background-color: var(--color-disabled);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.button:disabled:hover {
-  background-color: var(--color-disabled);
-  color: var(--color-light);
-}
-
-.button__spinner {
-  animation: buttonSpinner 1s linear infinite;
-}
-
-@keyframes buttonSpinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @media screen and (min-width: 768px) {
   .shortener-form {
     flex-direction: row;
@@ -141,18 +95,6 @@ const validateUrl = () => {
   .input {
     flex-grow: 1;
     margin-right: 1rem;
-  }
-
-  .submit-button {
-    flex-shrink: 0;
-  }
-
-  .error-message {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -18px;
-    width: 100%;
   }
 }
 </style>

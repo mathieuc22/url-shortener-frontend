@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage.vue";
 import AboutPage from "../pages/AboutPage.vue";
 import APIPage from "../pages/APIPage.vue";
 import Contact from "@/pages/Contact.vue";
+import Statistics from "@/pages/Statistics.vue";
 import FormSuccess from "@/components/FormSuccess.vue";
 import FormError from "@/components/FormError.vue";
 import Redirect from "@/components/Redirect.vue";
@@ -58,6 +59,11 @@ const routes = [
     path: "/:shortId",
     name: "Redirect",
     component: Redirect,
+  },
+  {
+    path: "/statistics",
+    name: "Statistics",
+    component: Statistics,
   },
 ];
 

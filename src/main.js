@@ -12,6 +12,7 @@ import {
   faEdit,
   faArrowUp,
   faTrash,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "./style.css";
@@ -30,7 +31,8 @@ library.add(
   faTimes,
   faEdit,
   faArrowUp,
-  faTrash
+  faTrash,
+  faSpinner
 );
 
 const app = createApp(App);

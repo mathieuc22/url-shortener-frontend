@@ -2,20 +2,46 @@
   <form class="shortener-form" @submit.prevent="handleSubmit">
     <div class="input-group">
       <label for="url" class="input-label">URL à raccourcir</label>
-      <input id="url" v-model="url" type="url" placeholder="https://example.com" class="input" required />
+      <input id="url" v-model="url" type="url" placeholder="https://example.com" class="input"
+        :class="{ 'input--error': error }" @input="validateUrl" />
+      <p v-if="error" class="error-message">{{ error }}</p>
     </div>
-    <button class="button" type="submit">Raccourcir</button>
+    <button class="button" type="submit" :disabled="error || !url || loading">
+      <span v-if="!loading">Raccourcir</span>
+      <font-awesome-icon v-if="loading" icon="spinner" class="button__spinner" />
+    </button>
   </form>
 </template>
-  
+
 <script setup>
 import { ref } from "vue";
 import { useShortenedUrls } from "@/composables/useShortenedUrls";
 
 const url = ref("");
-const { handleSubmit } = useShortenedUrls(url);
-</script>
+const error = ref("");
+const loading = ref(false);
+const { handleSubmit } = useShortenedUrls(url, error, loading);
 
+const validateUrl = () => {
+  error.value = "";
+
+  if (url.value === "") {
+    error.value = "L'URL ne peut pas être vide.";
+    return;
+  }
+
+  try {
+    const urlObj = new URL(url.value);
+
+    if (urlObj.hostname === "lienb.fr" || urlObj.hostname === "localhost") {
+      error.value = "Les URL lienb.fr et localhost ne sont pas autorisées.";
+      return;
+    }
+  } catch (e) {
+    error.value = "L'URL est invalide.";
+  }
+};
+</script>
   
 <style scoped>
 .shortener-form {
@@ -30,6 +56,7 @@ const { handleSubmit } = useShortenedUrls(url);
 }
 
 .input-group {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -44,6 +71,7 @@ const { handleSubmit } = useShortenedUrls(url);
 
 .input {
   flex-grow: 1;
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid var(--color-light);
@@ -53,17 +81,6 @@ const { handleSubmit } = useShortenedUrls(url);
   background-color: white;
   color: var(--color-dark);
   cursor: text;
-}
-
-.input:focus {
-  border-color: var(--color-secondary);
-}
-
-.generated-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -78,10 +95,6 @@ const { handleSubmit } = useShortenedUrls(url);
   .input {
     flex-grow: 1;
     margin-right: 1rem;
-  }
-
-  .submit-button {
-    flex-shrink: 0;
   }
 }
 </style>
